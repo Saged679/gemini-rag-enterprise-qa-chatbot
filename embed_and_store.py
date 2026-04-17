@@ -26,7 +26,7 @@ for filename in os.listdir(raw_dir):
 print(f"✅ Total chunks loaded and split: {len(all_chunks)}")
 
 # Step 2: Initialize Gemini Embeddings
-embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+embedding_model = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
 # Step 3: Create and persist Chroma Vector Store
 persist_dir = "vectorstore/chroma"

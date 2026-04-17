@@ -29,7 +29,10 @@ llm = ChatGoogleGenerativeAI(
     temperature=0.3,
     convert_system_message_to_human=True
 )
-embed_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+
+embed_model = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001"
+)
 
 # Streamlit UI Setup
 st.set_page_config(page_title="📘 Enterprise Policy Q&A Chatbot", layout="wide")
