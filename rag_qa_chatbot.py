@@ -10,8 +10,8 @@ load_dotenv()
 os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 
 # Model + Embeddings
-embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash", temperature=0.2)
+embedding_model = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+llm = ChatGoogleGenerativeAI(model="models/gemini-2.5-flash", temperature=0.2)
 
 # Load Vector Store
 persist_dir = "vectorstore/chroma"

@@ -25,7 +25,7 @@ os.makedirs("vectorstore/chroma", exist_ok=True)
 
 # Initialize LLM and Embeddings
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="models/gemini-2.5-flash",
     temperature=0.3,
     convert_system_message_to_human=True
 )
