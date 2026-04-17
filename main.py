@@ -33,7 +33,7 @@ class Question(BaseModel):
     session_id: str = "default" # Allows for multiple chat sessions
 
 # Initialize Embeddings and Retriever globally to avoid re-loading on each request
-embedding = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+embedding = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 # The Chroma class itself is used the same way, only the import path changes.
 vectorstore = Chroma(persist_directory="vectorstore/chroma", embedding_function=embedding)
 retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
@@ -64,7 +64,7 @@ async def ask_question(data: Question):
     
     # Initialize LLM within the function, although it could also be global if no
     # dynamic parameters (like temperature) are expected per request.
-    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash", temperature=0.2)
+    llm = ChatGoogleGenerativeAI(model="models/gemini-2.5-flash", temperature=0.2)
 
     # Define the ConversationalRetrievalChain
     qa_chain = ConversationalRetrievalChain.from_llm(
