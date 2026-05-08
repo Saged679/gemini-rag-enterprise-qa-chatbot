@@ -20,7 +20,6 @@ vectorstore = Chroma(persist_directory=persist_dir, embedding_function=embedding
 retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 
 # Enable memory
-# IMPORTANT: Explicitly set output_key to 'answer' to resolve ValueError
 memory = ConversationBufferMemory(
     memory_key="chat_history",
     return_messages=True,
